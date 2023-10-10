@@ -1,0 +1,108 @@
+.search-form {
+  padding: 70px 0 10px;
+  margin: 0 70px;
+  border-bottom: 1px solid #424242;
+  padding-bottom: 70px;
+}
+
+.search-form__form {
+  height: 72px;
+  background-color: #2f2f2f;
+  display: flex;
+  border-radius: 9px;
+  align-items: center;
+  padding: 0 30px 0 19px;
+}
+
+.search-form__image {
+  max-width: 34px;
+  margin: 19px 19px 19px 0;
+}
+
+.search-form__input {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #8b8b8b;
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.search-form__button {
+  min-width: 58.6px;
+  height: 34px;
+  color: #fff;
+  background-color: #4285f4;
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 18px;
+  border: none;
+  border-radius: 48px;
+  margin-left: 21.35px;
+  cursor: pointer;
+  transition: opacity 0.2s linear;
+}
+
+.search-form__button:hover {
+  opacity: 0.5;
+}
+
+.search-form__slice {
+  width: 1px;
+  height: 40px;
+  background-color: #424242;
+  margin: 0 30px;
+}
+
+@media (max-width: 1020px) {
+  .search-form {
+    padding: 80px 30px 109px;
+    flex-direction: column;
+  }
+
+  .search-form__slice {
+    margin: 0 19px;
+  }
+
+  .filter-check-box {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-form {
+    position: relative;
+    padding: 80px 14px 109px;
+  }
+
+  .search-form__image {
+    display: none;
+  }
+
+  .search-form__input {
+    font-size: 14px;
+    margin-left: 19px;
+  }
+
+  .search-form__slice {
+    display: none;
+  }
+
+  .search-form__button {
+    margin-right: 19px;
+  }
+
+  .filter-check-box {
+    position: absolute;
+    top: 197px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin: 0;
+  }
+}
