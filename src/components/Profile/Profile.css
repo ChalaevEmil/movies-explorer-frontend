@@ -50,7 +50,6 @@
 
 .profile__input-container_input {
   border-style: none;
-  outline: none;
   background-color: transparent;
   color: #fff;
   text-align: right;
@@ -58,6 +57,19 @@
   font-weight: 400;
   line-height: normal;
 }
+
+.profile__input-container_input:focus-visible {
+  outline: none;
+}
+
+.profile__input-container_input::placeholder {
+  transition: opacity .3s ease;
+}
+
+.profile__input-container_input:focus::placeholder {
+  opacity: 0;
+}
+
 
 .profile__button-container {
   margin-top: 220px;

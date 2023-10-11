@@ -30,6 +30,7 @@ export default function SearchForm() {
           placeholder="Фильм"
           value={searchMovie}
           onChange={handleChangeMovie}
+          required
         />
         <button className="search-form__button" type="submit">
           Найти

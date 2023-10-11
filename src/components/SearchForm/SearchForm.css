@@ -33,6 +33,14 @@
   line-height: 20px;
 }
 
+.search-form__input::placeholder {
+  transition: opacity .3s ease;
+}
+
+.search-form__input:focus::placeholder {
+  opacity: 0;
+}
+
 .search-form__button {
   min-width: 58.6px;
   height: 34px;
