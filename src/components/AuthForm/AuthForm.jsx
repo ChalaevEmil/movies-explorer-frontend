@@ -17,7 +17,7 @@ export default function AuthForm({ title, button, path }) {
         <div className="auth-form__container">
           {path === "/signin" && (
             <>
-              <span className="auth-form-lable">Имя</span>
+              <span className="auth-form__lable">Имя</span>
               <input
                 className="auth-form__input"
                 type="text"
@@ -30,7 +30,7 @@ export default function AuthForm({ title, button, path }) {
               <span className="auth-form__error">Что-то пошло не так...</span>
             </>
           )}
-          <span className="auth-form-lable">Email</span>
+          <span className="auth-form__lable">Email</span>
           <input
             className="auth-form__input"
             type="email"
@@ -41,7 +41,7 @@ export default function AuthForm({ title, button, path }) {
             required
           />
           <span className="auth-form__error">Что-то пошло не так...</span>
-          <span className="auth-form-lable">Пароль</span>
+          <span className="auth-form__lable">Пароль</span>
           <input
             className="auth-form__input"
             type="password"

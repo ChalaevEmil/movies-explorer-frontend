@@ -28,7 +28,7 @@
   gap: 26px;
 }
 
-.about-project__description_title {
+.about-project__description-title {
   margin: 0;
   padding: 0;
   font-weight: 400;
@@ -37,7 +37,7 @@
   font-size: 20px;
 }
 
-.about-project__description_paragraph {
+.about-project__description-paragraph {
   margin: 0;
   padding: 0;
   font-weight: 400;
@@ -50,7 +50,7 @@
   width: 100%;
 }
 
-.about-project__table_title {
+.about-project__table-title {
   margin: 0;
   padding: 0;
   height: 36px;
@@ -63,7 +63,7 @@
   margin-bottom: 14px;
 }
 
-.about-project__table_title_first-cell {
+.about-project__table-title-first-cell {
   width: 228px;
   background-color: #3ddc84;
   color: #000000;
@@ -95,12 +95,12 @@
     gap: 22px;
   }
 
-  .about-project__description_paragraph {
+  .about-project__description-paragraph {
     line-height: 18px;
     font-size: 12px;
   }
 
-  .about-project__table_title_first-cell {
+  .about-project__table-title-first-cell {
     width: 140px;
   }
 }
@@ -126,24 +126,24 @@
     gap: 16px;
     width: 284px;
   }
-  .about-project__description_title {
+  .about-project__description-title {
     line-height: normal;
     letter-spacing: -0.8px;
     font-size: 18px;
   }
 
-  .about-project__description_paragraph {
+  .about-project__description-paragraph {
     line-height: 16px;
     font-size: 11px;
   }
 
-  .about-project__table_title {
+  .about-project__table-title {
     font-size: 11px;
     line-height: normal;
     height: 35px;
   }
 
-  .about-project__table_title_first-cell {
+  .about-project__table-title-first-cell {
     width: 100px;
   }
 

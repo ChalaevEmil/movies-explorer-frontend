@@ -41,13 +41,13 @@ export default function Profile() {
             <div className="profile__form-container">
               <div className="profile__input-container">
                 <label
-                  className="profile__input-container__item"
+                  className="profile__item"
                   htmlFor="name"
                 >
                   Имя
                 </label>
                 <input
-                  className="profile__input-container_input"
+                  className="profile__input"
                   id="name"
                   name="name"
                   placeholder="Укажите Ваше имя"
@@ -61,13 +61,13 @@ export default function Profile() {
               </div>
               <div className="profile__input-container">
                 <label
-                  className="profile__input-container__item"
+                  className="profile__item"
                   htmlFor="email"
                 >
                   Email
                 </label>
                 <input
-                  className="profile__input-container_input"
+                  className="profile__input"
                   id="email"
                   name="email"
                   placeholder="Укажите Ваш email"

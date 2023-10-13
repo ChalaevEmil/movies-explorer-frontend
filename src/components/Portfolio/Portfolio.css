@@ -13,7 +13,7 @@
   font-feature-settings: "clig" off, "liga" off;
 }
 
-.portfolio_list {
+.portfolio__list {
   margin: 0;
   padding: 0;
   margin-top: 50px;
@@ -75,7 +75,7 @@
     line-height: 20px;
   }
 
-  .portfolio_list {
+  .portfolio__list {
     margin-top: 40px;
   }
 

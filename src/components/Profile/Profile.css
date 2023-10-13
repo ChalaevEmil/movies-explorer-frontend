@@ -40,7 +40,7 @@
   padding-bottom: 0;
 }
 
-.profile__input-container__item {
+.profile__item {
   margin: 0;
   padding: 0;
   font-size: 11px;
@@ -48,7 +48,7 @@
   line-height: normal;
 }
 
-.profile__input-container_input {
+.profile__input {
   border-style: none;
   background-color: transparent;
   color: #fff;
@@ -58,15 +58,15 @@
   line-height: normal;
 }
 
-.profile__input-container_input:focus-visible {
+.profile__input:focus-visible {
   outline: none;
 }
 
-.profile__input-container_input::placeholder {
+.profile__input::placeholder {
   transition: opacity .3s ease;
 }
 
-.profile__input-container_input:focus::placeholder {
+.profile__input:focus::placeholder {
   opacity: 0;
 }
 

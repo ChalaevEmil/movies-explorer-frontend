@@ -5,7 +5,7 @@ export default function Navigation() {
   const setActiveAccaunt = ({ isActive }) =>
     [
       "navigation__link",
-      "navigation__link_accaunt",
+      "navigation__link-accaunt",
       isActive ? "navigation__link_active" : "null",
     ].join(" ");
 
@@ -34,7 +34,7 @@ export default function Navigation() {
       </div>
 
       <ul className="navigation__list navigation__popup">
-        <li className="navigation__link_inactive">
+        <li className="navigation__link-main">
           <NavLink to="/" className={setActiveLink}>
             Главная
           </NavLink>
@@ -49,7 +49,7 @@ export default function Navigation() {
             Сохранённые фильмы
           </NavLink>
         </li>
-        <li className="navigation__link_stan">
+        <li className="navigation__link-stan">
           <NavLink to="/profile" className={setActiveAccaunt}>
             Аккаунт
             <span className="navigation__profile"></span>

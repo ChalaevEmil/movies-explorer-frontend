@@ -22,7 +22,7 @@
   align-items: center;
 }
 
-.techs__container_title {
+.techs__container-title {
   margin: 0;
   padding: 0;
   font-size: 50px;
@@ -32,7 +32,7 @@
   margin-bottom: 26px;
 }
 
-.techs__container_paragraph {
+.techs__container-paragraph {
   margin: 0;
   padding: 0;
   font-size: 14px;
@@ -52,7 +52,7 @@
   gap: 10px;
 }
 
-.techs__list_item {
+.techs__item {
   margin: 0;
   padding: 0;
   height: 60px;
@@ -78,17 +78,17 @@
     padding-top: 80px;
   }
 
-  .techs__container_title {
+  .techs__container-title {
     margin-bottom: 22px;
   }
 
-  .techs__container_paragraph {
+  .techs__container-paragraph {
     font-size: 12px;
     line-height: 18px;
     margin-bottom: 83px;
   }
 
-  .techs__list_item {
+  .techs__item {
     height: 57px;
     width: 84px;
     font-size: 12px;
@@ -112,13 +112,13 @@
     padding-top: 60px;
   }
 
-  .techs__container_title {
+  .techs__container-title {
     font-size: 30px;
     line-height: 58px;
     margin-bottom: 24px;
   }
 
-  .techs__container_paragraph {
+  .techs__container-paragraph {
     font-size: 11px;
     line-height: 16px;
     margin-bottom: 50px;

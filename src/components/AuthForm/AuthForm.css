@@ -1,7 +1,7 @@
 .auth-form {
-  margin: 0 auto;
-  max-width: 396px;
-  padding: 70px 0;
+padding: 70px 0 70px;
+width: 396px;
+margin: 0 auto;
 }
 
 .auth-form__title {
@@ -11,17 +11,18 @@
   font-size: 24px;
   font-weight: 500;
   line-height: normal;
-  padding: 40px 0;
+  margin: 40px 0;
 }
 
 .auth-form__form {
+  margin: 0 0 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 379px;
+  gap: 69px;
 }
 
-.auth-form-lable {
+.auth-form__lable {
   font-size: 10px;
   font-weight: 400;
   line-height: normal;
@@ -67,6 +68,7 @@
 
 .auth-form__button {
   height: 45px;
+  width: 100%;
   color: #fff;
   text-align: center;
   font-size: 14px;
@@ -89,12 +91,13 @@
 }
 
 .auth-form__quession {
+  margin: 0;
+  padding: 0;
   color: #8b8b8b;
   text-align: center;
   font-size: 14px;
   font-weight: 400;
   line-height: normal;
-  margin-top: 16px;
 }
 
 .auth-form__link {

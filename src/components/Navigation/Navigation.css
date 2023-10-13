@@ -26,11 +26,11 @@
   opacity: 0.6;
 }
 
-.navigation__link_stan {
+.navigation__link-stan {
   margin-left: auto;
 }
 
-.navigation__link_accaunt {
+.navigation__link-accaunt {
   display: flex;
   align-items: center;
   gap: 7px;
@@ -43,7 +43,7 @@
   font-weight: 500;
 }
 
-.navigation__link_inactive {
+.navigation__link-main {
   display: none;
 }
 
@@ -161,7 +161,7 @@
     padding: 159px 0 90px 0;
   }
 
-  .navigation__link_stan {
+  .navigation__link-stan {
     margin: auto 0 0;
   }
 
@@ -175,7 +175,7 @@
     border-bottom: 2px solid #fff;
   }
 
-  .navigation__link_inactive {
+  .navigation__link-main {
     display: list-item;
   }
 }
