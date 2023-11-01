@@ -1,14 +1,31 @@
 import "./MoviesCard.css";
-export default function MoviesCard({ movie }) {
+import { Link } from "react-router-dom";
+import renderTime from "../../utils/renderTime";
+
+export default function MovieCard({
+  movie,
+  poster,
+  onClickCardLike,
+  className,
+}) {
   return (
     <li>
       <div className="movies-card">
-        <img className="movies-card__poster" src={movie.src} alt={movie.name} />
+        <Link to={movie.trailerLink} target="_blank">
+          <img
+            className="movies-card__poster"
+            src={poster}
+            alt={movie.nameRU}
+          />
+        </Link>
         <div className="movies-card__container">
-          <p className="movies-card__name">{movie.name}</p>
-          <button className={"movies-card__like"}></button>
+          <div className="movies-card__name">{movie.nameRU}</div>
+          <button
+            onClick={() => onClickCardLike(movie)}
+            className={`movies-card__like ${className}`}
+          ></button>
         </div>
-        <p className="movies-card__duration">{movie.duration}</p>
+        <p className="movies-card__duration">{renderTime(movie.duration)}</p>
       </div>
     </li>
   );

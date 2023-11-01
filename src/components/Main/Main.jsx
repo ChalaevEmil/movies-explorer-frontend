@@ -7,10 +7,10 @@ import AboutMe from "../AboutMe/AboutMe";
 import Portfolio from "../Portfolio/Portfolio";
 import Footer from "../Footer/Footer";
 
-export default function Main() {
+export default function Main({ isLogged }) {
   return (
     <>
-      <Header className={"header_main-color"} />
+      <Header className={"header_main-color"} isLogged={isLogged} />
       <main>
         <Promo />
         <AboutProject />

@@ -1,25 +1,28 @@
-import React, { useState } from "react";
-import MoviesCard from "../MoviesCard/MoviesCard";
-import Preloader from "../Preloader/Preloader";
 import "./MoviesCardList.css";
-import filmList from "../../utils/filmList";
+import Preloader from "../Preloader/Preloader";
 
-export default function MoviesCardList({ movies }) {
-  const [isLoading] = useState(false);
+export default function MoviesCardList({
+  movies,
+  children,
+  isLoading,
+  isError,
+}) {
   return (
-    <section className="movies-card-list">
+    <>
       {isLoading ? (
         <Preloader />
+      ) : isError ? (
+        <p className="movies__error">
+          Во время запроса произошла ошибка. Возможно, проблема с соединением
+          или сервер недоступен. Подождите немного и попробуйте ещё раз
+        </p>
+      ) : movies.length ? (
+        <section className="movies-card-list">
+          <ul className="movies-card-list__item">{children}</ul>
+        </section>
       ) : (
-        <ul className="movies-card-list__item">
-          {filmList.map((movie, i) => {
-            return <MoviesCard key={i} movie={movie} />;
-          })}
-        </ul>
+        <p className="movies__error">Ничего не найдено</p>
       )}
-      <button className="movies-card-list__button" type="button">
-        Ещё
-      </button>
-    </section>
+    </>
   );
 }

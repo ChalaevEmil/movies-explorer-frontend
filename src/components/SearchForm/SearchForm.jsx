@@ -1,17 +1,20 @@
-import React, { useState } from "react";
 import "./SearchForm.css";
-import FilterCheckBox from "../FilterCheckBox/FilterCheckBox";
+import { useRef } from "react";
 import glassIcon from "../../images/glassIcon.svg";
+import FilterCheckBox from "../FilterCheckBox/FilterCheckBox";
 
-export default function SearchForm() {
-  const [searchMovie, setSearchMovie] = useState("");
+export default function SearchForm({
+  onSubmit,
+  onChecked,
+  isChecked,
+  searchText,
+}) {
+  const searchInput = useRef("");
 
-  const handleChangeMovie = (evt) => {
-    setSearchMovie(evt.target.value);
-  };
+  function handleSubmit(e) {
+    e.preventDefault();
 
-  function handleSubmit(evt) {
-    evt.preventDefault();
+    onSubmit(searchInput.current.value);
   }
 
   return (
@@ -22,21 +25,25 @@ export default function SearchForm() {
         method="POST"
         onSubmit={handleSubmit}
       >
-        <img className="search-form__image" src={glassIcon} alt="Поиск" />
+        <img
+          src={glassIcon}
+          className="search-form__image"
+          alt="Лупа"
+        />
         <input
+          ref={searchInput}
+          defaultValue={searchText || ""}
           className="search-form__input"
-          name="search"
+          name="search-input"
           type="text"
           placeholder="Фильм"
-          value={searchMovie}
-          onChange={handleChangeMovie}
-          required
+          autoComplete="off"
         />
         <button className="search-form__button" type="submit">
           Найти
         </button>
         <div className="search-form__slice"></div>
-        <FilterCheckBox className="filter-check-box" />
+        <FilterCheckBox isChecked={isChecked} onChecked={onChecked} />
       </form>
     </section>
   );

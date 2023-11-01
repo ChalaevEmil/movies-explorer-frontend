@@ -48,6 +48,11 @@
   background-image: url(../../images/activeLike.svg);
 }
 
+.movies-card__like-icon_trash {
+  background-color: #313131;
+  background-image: url(../../images/cross_trash_icon.svg);
+}
+
 .movies-card__duration {
   color: #8b8b8b;
   font-size: 11px;

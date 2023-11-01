@@ -1,61 +1,115 @@
 import "./AuthForm.css";
 import { NavLink } from "react-router-dom";
 import logo from "../../images/siteLogo.svg";
+import { useForm } from "react-hook-form";
+import { useFormWithValidation } from "../../utils/useFormWithValidation";
+import { REGEX } from "../../utils/regex";
 
-export default function AuthForm({ title, button, path }) {
-  function handleSubmit(evt) {
+export default function AuthForm({
+  title,
+  button,
+  path,
+  isLoading,
+  handleUserData,
+  serverError,
+  onServerError,
+}) {
+  const {
+    getValues,
+    register,
+    formState: { errors },
+  } = useForm({ mode: "onChange" });
+
+  const { isFormValid, values, handleChange, errorsMessages } =
+    useFormWithValidation();
+
+  const handleSubmit = (evt) => {
     evt.preventDefault();
+
+    handleUserData({
+      userName: values["name"],
+      email: getValues("email"),
+      password: values["password"],
+    });
+  };
+
+  function validateForm() {
+    return !isFormValid || !!errors?.email || isLoading;
   }
 
   return (
     <main className="auth-form">
       <NavLink to="/" className="auth-form__main-link">
-        <img className="auth-form__image" src={logo} alt="ярлік" />
+        <img className="auth-form__image" src={logo} alt="Ярлык" />
       </NavLink>
       <h2 className="auth-form__title">{title}</h2>
-      <form name="auth" className="auth-form__form" onSubmit={handleSubmit}>
-        <div className="auth-form__container">
+      <form
+        name="auth-form-form"
+        method="POST"
+        className="auth-form__form"
+        onSubmit={handleSubmit}
+        noValidate
+      >
+        <div className="uth-form__container" disabled={isLoading}>
           {path === "/signin" && (
             <>
               <span className="auth-form__lable">Имя</span>
               <input
-                className="auth-form__input"
                 type="text"
                 name="name"
+                className="auth-form__input"
                 placeholder="Имя"
                 minLength="2"
                 maxLength="40"
                 required
+                onChange={(evt) => handleChange(evt)}
               />
-              <span className="auth-form__error">Что-то пошло не так...</span>
+              <span className="auth-form__error">
+                {errorsMessages["name"]}
+              </span>
             </>
           )}
-          <span className="auth-form__lable">Email</span>
+          <legend className="auth-form__lable">E-mail</legend>
           <input
-            className="auth-form__input"
             type="email"
-            name="email"
+            name="user-email"
+            className="auth-form__input"
             placeholder="Почта"
-            minLength="2"
-            maxLength="40"
             required
+            {...register("email", {
+              required: "Email адрес обязательное поле",
+              pattern: {
+                value: REGEX,
+                message:
+                  "Почта не соответствует требуемому формату <имя>@<домен>.<код страны>",
+              },
+            })}
           />
-          <span className="auth-form__error">Что-то пошло не так...</span>
+          <span className="auth-form__error">
+            {errors?.email && errors?.email?.message}
+          </span>
           <span className="auth-form__lable">Пароль</span>
           <input
-            className="auth-form__input"
             type="password"
             name="password"
+            className="auth-form__input"
             placeholder="Пароль"
             minLength="6"
             maxLength="2440"
             required
+            onChange={(evt) => handleChange(evt)}
           />
-          <span className="auth-form__error">Что-то пошло не так...</span>
+          <span className="auth-form__error">
+            {errorsMessages["password"]}
+          </span>
         </div>
+        <span className="auth-form__error">{serverError}</span>
         <button
           type="submit"
-          className="auth-form__button auth-form__button_disabled"
+          disabled={validateForm()}
+          className={`auth-form__button ${
+            validateForm() ? "auth-form__button_disabled" : ""
+          }`}
         >
           {button}
         </button>
@@ -63,7 +117,11 @@ export default function AuthForm({ title, button, path }) {
       {path === "/signin" && (
         <p className="auth-form__quession">
           Уже зарегистрированы?
-          <NavLink to={path} className="auth-form__link">
+          <NavLink
+            to={path}
+            className="auth-form__link"
+            onClick={() => onServerError("")}
+          >
             Войти
           </NavLink>
         </p>
@@ -71,7 +129,11 @@ export default function AuthForm({ title, button, path }) {
       {path === "/signup" && (
         <p className="auth-form__quession">
           Ещё не зарегистрированы?
-          <NavLink to={path} className="auth-form__link">
+          <NavLink
+            to={path}
+            className="auth-form__link"
+            onClick={() => onServerError("")}
+          >
             Регистрация
           </NavLink>
         </p>
