@@ -17,7 +17,7 @@ class Api {
         method: 'POST',
         headers: this._headers,
         credentials: 'include',
-        body: JSON.stringify(newUserInfo)
+        body: JSON.stringify(newUserInfo),
       })
       .then((res) => {
         return this._handlePromise(res);
@@ -29,7 +29,7 @@ class Api {
         method: 'POST',
         headers: this._headers,
         credentials: 'include',
-        body: JSON.stringify(UserData)
+        body: JSON.stringify(UserData),
       })
       .then((res) => {
         return this._handlePromise(res);
@@ -51,7 +51,7 @@ class Api {
         method: 'GET',
         headers: this._headers,
         credentials: 'include',
-        body: JSON.stringify()
+        body: JSON.stringify(),
       })
       .then((res) => {
         return this._handlePromise(res);
@@ -63,7 +63,7 @@ class Api {
         method: 'PATCH',
         headers: this._headers,
         credentials: 'include',
-        body: JSON.stringify(UserData)
+        body: JSON.stringify(UserData),
       })
       .then((res) => {
         return this._handlePromise(res);
@@ -107,7 +107,7 @@ class Api {
 }
 
 const mainApi = new Api({
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://api.kinosite.nomoredomainsicu.ru',
   headers: {
     'Content-Type': 'application/json'
   }

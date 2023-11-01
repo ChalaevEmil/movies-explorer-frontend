@@ -43,11 +43,11 @@ export default function App() {
       .catch((err) => console.warn(err));
   }, [isLogged]);
 
-  function handleUserRegister({ userName, email, password }) {
+  function handleUserRegister({ name, email, password }) {
     setIsLoading(true);
 
     const newUserInfo = {
-      name: userName,
+      name: name,
       email: email,
       password: password,
     };

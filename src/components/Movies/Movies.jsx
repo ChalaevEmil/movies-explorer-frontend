@@ -87,7 +87,7 @@ export default function Movies({
     setLocalData("filterMovies", filterMovies);
   }
 
-  function handleAddBtnClick() {
+  function handleAddButtonClick() {
     const addMovies = moviesCounter.addMovies;
     const displayMovies = moviesCounter.displayMovies + addMovies;
     setMoviesCounter({ displayMovies, addMovies });
@@ -132,7 +132,7 @@ export default function Movies({
           <button
             type="button"
             className="movies__button"
-            onClick={handleAddBtnClick}
+            onClick={handleAddButtonClick}
           >
             Ещё
           </button>

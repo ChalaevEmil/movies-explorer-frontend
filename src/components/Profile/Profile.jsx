@@ -16,7 +16,7 @@ export default function Profile({
   const currentUser = useContext(CurrentUserContext);
 
   const [isEditUser, setIsEditUser] = useState(false);
-  const [userName, setUserName] = useState("");
+  const [name, setUserName] = useState("");
 
   const {
     getValues,
@@ -62,7 +62,7 @@ export default function Profile({
 
   function validateForm() {
     return (
-      (userName === currentUser.name && watchEmail === currentUser.email) ||
+      (name === currentUser.name && watchEmail === currentUser.email) ||
       !isFormValid ||
       errors?.email
     );
@@ -95,13 +95,11 @@ export default function Profile({
                   minLength="2"
                   maxLength="40"
                   required
-                  value={userName}
+                  value={name}
                   onChange={handleUserNameChange}
                 ></input>
               </div>
-              <span className="profile__error">
-                {errorsMessages["name"]}
-              </span>
+              <span className="profile__error">{errorsMessages["name"]}</span>
               <div className="profile__input-container">
                 <label className="profile__item">E-mail</label>
                 <input
@@ -151,7 +149,7 @@ export default function Profile({
                 </button>
                 <button
                   type="button"
-                  className="profile__button profile__button_exit"
+                  className="profile__button profile__button-exit"
                   onClick={handleSignOut}
                 >
                   Выйти из аккаунта

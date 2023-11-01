@@ -27,7 +27,7 @@ export default function AuthForm({
     evt.preventDefault();
 
     handleUserData({
-      userName: values["name"],
+      name: values["name"],
       email: getValues("email"),
       password: values["password"],
     });
@@ -72,7 +72,7 @@ export default function AuthForm({
           <legend className="auth-form__lable">E-mail</legend>
           <input
             type="email"
-            name="user-email"
+            name="email"
             className="auth-form__input"
             placeholder="Почта"
             required
