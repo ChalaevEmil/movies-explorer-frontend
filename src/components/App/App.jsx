@@ -145,7 +145,7 @@ export default function App() {
   }
 
   function handleCardLiked(movie) {
-    const movieToAdd = {
+    const onMovieLike = {
       country: movie.country,
       director: movie.director,
       duration: movie.duration,
@@ -175,7 +175,7 @@ export default function App() {
         });
     } else {
       mainApi
-        .saveMovie(movieToAdd)
+        .saveMovie(onMovieLike)
         .then((movie) => {
           setUserMovies([...userMovies, movie]);
         })

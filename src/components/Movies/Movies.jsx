@@ -89,8 +89,8 @@ export default function Movies({
 
   function handleAddButtonClick() {
     const addMovies = moviesCounter.addMovies;
-    const displayMovies = moviesCounter.displayMovies + addMovies;
-    setMoviesCounter({ displayMovies, addMovies });
+    const moviesOnDisplay = moviesCounter.moviesOnDisplay + addMovies;
+    setMoviesCounter({ moviesOnDisplay, addMovies });
   }
 
   console.log(filterMovies);
@@ -112,7 +112,7 @@ export default function Movies({
           isLoading={isLoading}
           isError={isError}
         >
-          {filterMovies.slice(0, moviesCounter.displayMovies).map((movie) => {
+          {filterMovies.slice(0, moviesCounter.moviesOnDisplay).map((movie) => {
             return (
               <MoviesCard
                 key={movie.id}
@@ -128,7 +128,7 @@ export default function Movies({
             );
           })}
         </MoviesCardList>
-        {filterMovies.length > moviesCounter.displayMovies ? (
+        {filterMovies.length > moviesCounter.moviesOnDisplay ? (
           <button
             type="button"
             className="movies__button"

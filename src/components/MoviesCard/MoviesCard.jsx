@@ -1,6 +1,5 @@
 import "./MoviesCard.css";
 import { Link } from "react-router-dom";
-import renderTime from "../../utils/renderTime";
 
 export default function MovieCard({
   movie,
@@ -8,6 +7,13 @@ export default function MovieCard({
   onClickCardLike,
   className,
 }) {
+
+  function render(time) {
+    return time < 60
+      ? `${time}м`
+      : `${(time - (time % 60)) / 60}ч ${time % 60}м`;
+  }
+
   return (
     <li>
       <div className="movies-card">
@@ -25,7 +31,7 @@ export default function MovieCard({
             className={`movies-card__like ${className}`}
           ></button>
         </div>
-        <p className="movies-card__duration">{renderTime(movie.duration)}</p>
+        <p className="movies-card__duration">{render(movie.duration)}</p>
       </div>
     </li>
   );

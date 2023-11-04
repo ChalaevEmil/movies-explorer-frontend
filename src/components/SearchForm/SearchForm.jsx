@@ -13,7 +13,6 @@ export default function SearchForm({
 
   function handleSubmit(e) {
     e.preventDefault();
-
     onSubmit(searchInput.current.value);
   }
 

@@ -1,4 +1,6 @@
 .movies__button {
+  margin: 0;
+  padding: 0;
   width: 320px;
   height: 36px;
   border-radius: 6px;
@@ -10,6 +12,7 @@
   font-weight: 500;
   line-height: normal;
   cursor: pointer;
+  display: block;
   transition: linear 0.3s opacity;
 }
 

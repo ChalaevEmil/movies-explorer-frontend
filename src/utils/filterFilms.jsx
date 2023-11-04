@@ -14,6 +14,7 @@ export default function filterFilms(movies, { searchText, isChecked }) {
   }
 
   return filtredMovies.filter((movie) => {
-    return movie.nameRU.toLowerCase().includes(searchText.toLowerCase());
+    return movie.nameRU.toLowerCase().includes(searchText.toLowerCase())||
+    movie.nameEN.toLowerCase().includes(searchText.toLowerCase());
   });
 }
