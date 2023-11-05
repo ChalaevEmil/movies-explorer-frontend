@@ -60,7 +60,7 @@ export default function AuthForm({
                 className="auth-form__input"
                 placeholder="Имя"
                 minLength="2"
-                maxLength="40"
+                maxLength="30"
                 required
                 onChange={(evt) => handleChange(evt)}
               />
@@ -94,7 +94,7 @@ export default function AuthForm({
             name="password"
             className="auth-form__input"
             placeholder="Пароль"
-            minLength="6"
+            minLength="8"
             maxLength="2440"
             required
             onChange={(evt) => handleChange(evt)}
