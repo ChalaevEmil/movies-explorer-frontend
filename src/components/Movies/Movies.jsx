@@ -66,7 +66,7 @@ export default function Movies({
       searchText: searchText,
     });
 
-    setLocalData("filterMovies", filterMovies);
+    setLocalData(isChecked, "filterMovies", filterMovies);
   }
 
   function handleChecked(isChecked) {
@@ -84,7 +84,7 @@ export default function Movies({
       searchText: searchText,
     });
 
-    setLocalData("filterMovies", filterMovies);
+    setLocalData(searchText, isChecked, filterMovies);
   }
 
   function handleAddButtonClick() {

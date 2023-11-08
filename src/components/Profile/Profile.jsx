@@ -16,7 +16,6 @@ export default function Profile({
   const currentUser = useContext(CurrentUserContext);
 
   const [isEditUser, setIsEditUser] = useState(false);
-  const [name, setUserName] = useState("");
 
   const {
     getValues,
@@ -26,25 +25,21 @@ export default function Profile({
     formState: { errors },
   } = useForm({ mode: "onChange" });
 
-  const { values, handleChange, errorsMessages, isFormValid } =
+  const { errorsMessages, isFormValid } =
     useFormWithValidation();
 
   const watchEmail = watch("email");
+  const watchName = watch("name");
 
   useEffect(() => {
     if (currentUser.name) {
       setValue("email", currentUser.email);
-      setUserName(currentUser.name);
+      setValue("name", currentUser.name);
     }
   }, [currentUser, setValue]);
 
   function handleIsEditUser() {
     setIsEditUser(true);
-  }
-
-  function handleUserNameChange(e) {
-    setUserName(e.target.value);
-    handleChange(e);
   }
 
   function handleSignOut() {
@@ -55,14 +50,14 @@ export default function Profile({
     e.preventDefault();
 
     onUpdateUser({
-      name: values["name"],
+      name: getValues("name"),
       email: getValues("email"),
     });
   }
 
   function validateForm() {
     return (
-      (name === currentUser.name && watchEmail === currentUser.email) ||
+      (watchName === currentUser.name && watchEmail === currentUser.email) ||
       !isFormValid ||
       errors?.email
     );
@@ -95,8 +90,10 @@ export default function Profile({
                   minLength="2"
                   maxLength="40"
                   required
-                  value={name}
-                  onChange={handleUserNameChange}
+                  onChange={(e) => console.log(e)}
+                  {...register("name", {
+                    required: "Укажите Имя",
+                  })}
                 ></input>
               </div>
               <span className="profile__error">{errorsMessages["name"]}</span>
@@ -104,7 +101,7 @@ export default function Profile({
                 <label className="profile__item">E-mail</label>
                 <input
                   type="email"
-                  name="user-email"
+                  name="email"
                   className="profile__input"
                   placeholder="Почта"
                   onChange={(e) => console.log(e)}

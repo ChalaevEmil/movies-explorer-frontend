@@ -18,10 +18,10 @@ export default function SavedMovies({ isLogged, onClickCardLike, userMovies }) {
       setFilterMovies(
         filterFilms(userMovies, {
           isChecked: false,
-          searchText: "",
+          searchText: searchText,
         })
       ),
-    [userMovies]
+    [userMovies, searchText]
   );
 
   function handleChecked(isChecked) {
@@ -42,7 +42,7 @@ export default function SavedMovies({ isLogged, onClickCardLike, userMovies }) {
         isChecked: isChecked,
         searchText: searchText,
       })
-    );
+    )
   }
 
   return (
