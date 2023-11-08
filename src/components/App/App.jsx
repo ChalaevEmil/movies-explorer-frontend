@@ -141,7 +141,8 @@ export default function App() {
     return movieApi.getAllMovies().then((initialMovies) => {
       setInitialMovies(initialMovies);
       return initialMovies;
-    });
+    })
+    .catch((err) => console.warn(err));
   }
 
   function handleCardLiked(movie) {

@@ -24,14 +24,20 @@
 }
 
 .not-found__link {
-  text-decoration: none;
+  width: 42px;
+  height: 17px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  display: block;
   color: #4285f4;
   text-align: center;
   font-size: 14px;
   font-weight: 400;
   line-height: normal;
-  margin: 141px 0 0;
+  margin: 141px auto 0;
   transition: opacity 0.3s linear;
+  cursor: pointer;
 }
 
 .not-found__link:hover {
