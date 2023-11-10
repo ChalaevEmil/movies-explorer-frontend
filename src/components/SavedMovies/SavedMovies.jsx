@@ -12,7 +12,7 @@ export default function SavedMovies({ isLogged, onClickCardLike, userMovies }) {
   const [filterMovies, setFilterMovies] = useState(userMovies);
   const [searchText, setSearchText] = useState("");
   const [isChecked, setIsChecked] = useState(false);
-
+  const [isError, setIsError] = useState(false);
   useEffect(
     () =>
       setFilterMovies(
@@ -56,7 +56,7 @@ export default function SavedMovies({ isLogged, onClickCardLike, userMovies }) {
           onChecked={handleChecked}
           isChecked={isChecked}
         />
-        <MoviesCardList movies={userMovies}>
+        <MoviesCardList movies={userMovies} isError={isError}>
           {filterMovies.map((movie) => {
             return (
               <MoviesCard
