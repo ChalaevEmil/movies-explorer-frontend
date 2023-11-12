@@ -17,7 +17,6 @@ export default function Movies({
   onSubmit,
   onClickCardLike,
 }) {
-  console.log(getLocalData("filterMovies"));
   const [filterMovies, setFilterMovies] = useState(
     getLocalData("filterMovies") ? getLocalData("filterMovies") : []
   );
@@ -66,7 +65,7 @@ export default function Movies({
       searchText: searchText,
     });
 
-    setLocalData(searchText, isChecked, filterMovies);
+    setLocalData('filterMovies', filterMovies);
   }
 
   function handleChecked(isChecked) {
@@ -84,7 +83,7 @@ export default function Movies({
       searchText: searchText,
     });
 
-    setLocalData(searchText, isChecked, filterMovies);
+    setLocalData('filterMovies', filterMovies);
   }
 
   function handleAddButtonClick() {
@@ -93,7 +92,8 @@ export default function Movies({
     setMoviesCounter({ moviesOnDisplay, addMovies });
   }
 
-  console.log(filterMovies);
+  console.log(setLocalData('filterMovies', filterMovies));
+  
 
   return (
     <>

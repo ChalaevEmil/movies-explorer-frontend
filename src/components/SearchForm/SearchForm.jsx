@@ -23,6 +23,7 @@ export default function SearchForm({
         className="search-form__form"
         method="POST"
         onSubmit={handleSubmit}
+        autoComplete="off"
       >
         <img
           src={glassIcon}
@@ -36,7 +37,7 @@ export default function SearchForm({
           name="search-input"
           type="text"
           placeholder="Фильм"
-          autoComplete="off"
+
         />
         <button className="search-form__button" type="submit">
           Найти
