@@ -56,7 +56,7 @@ export default function SavedMovies({ isLogged, onClickCardLike, userMovies }) {
           onChecked={handleChecked}
           isChecked={isChecked}
         />
-        <MoviesCardList movies={userMovies} isError={isError}>
+        <MoviesCardList movies={filterMovies} isError={isError}>
           {filterMovies.map((movie) => {
             return (
               <MoviesCard
